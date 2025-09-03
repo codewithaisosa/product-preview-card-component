@@ -1,0 +1,168 @@
+/* montserrat-500 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  src: url('/assets/fonts/montserrat-v30-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* montserrat-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/assets/fonts/montserrat-v30-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* fraunces-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Fraunces';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/assets/fonts/fraunces-v37-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+:root {
+  --primary-font: 'Montserrat';
+  --secondary-font: 'Fraunces';
+  /*  Primary   */
+  --green-500: hsl(158, 36%, 37%);
+  --green-700: hsl(158, 42%, 18%);
+  /* ### Neutral  */
+  --black: hsl(212, 21%, 14%);
+  --grey: hsl(228, 12%, 48%);
+  --cream: hsl(30, 38%, 92%);
+  --white: hsl(0, 0%, 100%);
+}
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 1.6rem;
+  font-size: clamp(1.3rem, 1.2rem + 1vw, 1.4rem);
+  position: relative;
+  line-height: 1.5;
+  font-family: var(--primary-font);
+}
+.body-container {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background-color: var(--cream);
+  display: grid;
+  grid-template:
+    'main-container' 1fr
+    'footer-container' auto
+    / 1fr;
+  row-gap: 20px;
+}
+.main-container {
+  grid-area: main-container;
+  display: grid;
+  place-items: center;
+  padding-block: 2rem;
+}
+.footer-container {
+  grid-area: footer-container;
+  background-color: var(--white);
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  & a {
+    text-decoration: none;
+    color: var(--green-500);
+    font-weight: 600;
+    font-family: var(--secondary-font);
+  }
+  & a:hover {
+    color: var(--green-700);
+    transition: 0.1s cubic-bezier(0.19, 1, 0.22, 1) color;
+  }
+}
+img {
+  width: 100%;
+  height: auto;
+}
+.product-review-card {
+  width: min(100% - 2.5rem, 60rem);
+  min-height: max-content;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: var(--white);
+}
+.product-review-card__image {
+  height: auto;
+  width: 100%;
+}
+.product-review-card__description {
+  padding: 1.5em;
+  display: grid;
+  row-gap: 20px;
+  color: var(--grey);
+}
+.product-name {
+  font-size: clamp(2.5rem, 2.5rem + 1vw, 3.5rem);
+  line-height: 1.2;
+  margin: 0;
+  font-family: var(--secondary-font);
+  color: var(--black);
+}
+.product-price {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+.main-price {
+  font-size: larger;
+  font-family: var(--secondary-font);
+  color: var(--green-500);
+  font-size: clamp(2.5rem, 2.5rem + 1vw, 3.5rem);
+}
+.discount {
+  font-size: clamp(1.1rem, 1rem + 1vw, 1.3rem);
+  text-decoration: line-through;
+}
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 10px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1.5rem;
+  border-style: none;
+  padding: 0.87em;
+  color: var(--white);
+  background-color: var(--green-500);
+  &:hover {
+    background-color: var(--green-700);
+    transition: 0.1s cubic-bezier(0.19, 1, 0.22, 1) background-color;
+  }
+}
+@media screen and (width >= 34.9rem) {
+  .product-review-card {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .product-review-card__image {
+    display: flex;
+  }
+  .product-name {
+    font-size: clamp(2.5rem, 2.5rem + 1vw, 3.5rem);
+    line-height: 1.1;
+    margin: 0;
+    font-family: var(--secondary-font);
+    color: var(--black);
+  }
+}
