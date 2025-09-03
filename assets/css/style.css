@@ -23,8 +23,8 @@
   src: url('/assets/fonts/fraunces-v37-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 :root {
-  --primary-font: 'Montserrat';
-  --secondary-font: 'Fraunces';
+  --primary-font: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --secondary-font: 'Fraunces', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   /*  Primary   */
   --green-500: hsl(158, 36%, 37%);
   --green-700: hsl(158, 42%, 18%);
@@ -166,6 +166,7 @@ button {
     color: var(--black);
   }
 }
+
 
 
 
